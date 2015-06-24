@@ -6,7 +6,7 @@ var notp = require('notp')
 var flag = '0'
 var lastReq = ""
 var lastBody = ""
-var key = '12345678738462738192';
+var key = '12345678738462738192'; // Placeholder key - Update this to your key. 
 
 app.get('/', function(req, res){
 	res.send(flag);

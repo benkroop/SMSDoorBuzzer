@@ -29,7 +29,7 @@ void loop() {
         return;
     }
 
-    request.ip = {140,239,148,14};
+    request.ip = {140,239,148,14}; // Example IP Address, update this to yours
     request.port = 80;
     request.path = "/";
 
