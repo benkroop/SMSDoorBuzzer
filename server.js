@@ -8,14 +8,6 @@ var lastReq = ""
 var lastBody = ""
 var key = '12345678738462738192';
 
-app.get('/lastBody', function(req, res){
-	res.send(lastBody);
-})
-
-app.get('/lastReq', function(req, res){
-	res.send(lastReq);
-})
-
 app.get('/', function(req, res){
 	res.send(flag);
 	flag = '0';
