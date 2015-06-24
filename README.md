@@ -1,4 +1,4 @@
-house
+SMSDoorBuzzer
 =====
 
 SMSDoorBuzzer code uses a Spark Core and a relay to trigger the buzzer on a door when an SMS is received with the correct code. The server is written in Node.js. It uses Twilio, so it doesn't require a GSM module, phone plan, or phone reception. It does, however, require an internet connection. For security, the door code changes periodically, and is generated using Google Authenticator's TOTP. You'll get a new 6-digit code every 30 seconds from the GA app. This prevents someone from discovering one code and having unrestricted access to the building.
