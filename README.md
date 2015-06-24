@@ -1,7 +1,15 @@
 house
 =====
 
-House code uses a Spark Core and a relay to trigger the buzzer on a door. The server is written in Node.js, and I'm running it on a DigitalOcean droplet, although you can run it on any machine with a static public IP address.
+SMSDoorBuzzer code uses a Spark Core and a relay to trigger the buzzer on a door when an SMS is received with the correct code. The server is written in Node.js. It uses Twilio, so it doesn't require a GSM module, phone plan, or phone reception. It does, however, require an internet connection. For security, the door code changes periodically, and is generated using Google Authenticator's TOTP. You'll get a new 6-digit code every 30 seconds from the GA app. This prevents someone from discovering one code and having unrestricted access to the building.
+
+**Technical Requirements**
+
+- This should work on most door buzzer system with a simple SPST switch for the buzzer button. 
+- You'll need a server with a public IP address that can run a Node.js server.
+- A Spark (Particle) Core. This may also work with Particle's other products.
+- a 3.3v relay, or a 5v relay and a logic level shifter (3.3 -> 5v)
+- a 3.3 or 5v power supply. I used a wall wart with USB output - basically a phone charger.
 
 server
 ------
