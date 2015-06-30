@@ -16,10 +16,10 @@ server
 
 To set up the server:
 
-1. First you'll need a server with a static public IP address. I used a DigitalOcean droplet, because it's only $5 / month, is easy to set up, and provides a static IP address.
-2. On your server, clone this repository:
+1. First you'll need a server with a static public IP address. I used a DigitalOcean droplet because it's only $5 / month, is easy to set up, and provides a static IP address.
+2. Clone this repository on your server:
 
-		git clone https://github.com/benkroop/house.git
+		git clone https://github.com/benkroop/SMSDoorBuzzer.git
 
 3. Generate a TOTP private key. I recommend using an online (browser-based, JavaScript) generator, like [this one](http://blog.tinisles.com/2011/10/google-authenticator-one-time-password-algorithm-in-javascript/ "TOTP Generator"). 
 4. Save the QR code for later, then update the "key" variable in server.js with your secret key.
@@ -40,7 +40,7 @@ Next, set up a Twilio phone number
 firmware
 --------
 
-To configure the firmware, update request.ip on line 68 in doorbell.ino to your server's IP address, using commas to separate each byte of the address separated by a comma. 
+To configure the firmware, update request.ip on line 32 in doorbell.ino to your server's IP address, using commas to separate each byte of the address separated by a comma. 
 
 	request.ip = {123, 101, 255, 0}
 
