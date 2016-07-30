@@ -5,7 +5,7 @@ SMSDoorBuzzer code uses a Spark Core and a relay to trigger the buzzer on a door
 
 **Technical Requirements**
 
-- This should work on most door buzzer system with a simple SPST switch for the buzzer button. 
+- This should work on most door buzzer systems with a simple SPST switch for the buzzer button.
 - You'll need a server with a public IP address that can run a Node.js server.
 - Spark (Particle) Core. This may also work with Particle's other products.
 - 3.3v relay, or a 5v relay and a logic level shifter (3.3 -> 5v)
@@ -35,14 +35,14 @@ Next, set up a Twilio phone number
 1. Acquire a Twilio phone number. 
 2. Go to https://www.twilio.com/user/account/phone-numbers/
 3. Click the phone number you want to use as the house number.
-4. Under SMS & MMS, set the request url to http://123.104.255.255/sms (Using your server's IP address), and select HTTP GET.
+4. Under Messaging, set the request url to http://123.123.123.123/sms (Using your server's IP address), and select HTTP GET.
 
 firmware
 --------
 
-To configure the firmware, update request.ip on line 32 in doorbell.ino to your server's IP address, using commas to separate each byte of the address separated by a comma. 
+To configure the firmware, update request.ip on line 32 in doorbell.ino to your server's IP address, using commas to separate each byte of the address.
 
-	request.ip = {123, 101, 255, 0}
+	request.ip = {123, 123, 123, 123}
 
 Then flash the firmware onto the Spark Core.
 
@@ -53,7 +53,7 @@ hardware
 
 ![Front](/circuit/outside.jpg)
 
-Connect the control side of a 3.3v relay to D7 of the Spark Core and to ground. On the contactor side of the relay, connect jumper wire, and solder the ends of the jumper wire either side of the button that controls your building's door buzzer. This allows the relay to jump the unlock button on your buzzer pannel. 
+Connect the control side of a 3.3v relay to D7 of the Spark Core and to ground. On the contactor side of the relay, connect jumper wire, and solder the ends of the jumper wire either side of the button that controls your building's door buzzer. This allows the relay to jump the unlock button's terminals on your buzzer pannel.
 
 You'll need a 3.3v power supply or 5v MicroUSB source to power the Spark Core. I recommend drilling a hole your doorbell control box and running the USB cable into it to keep your wall looking clean. 
 
@@ -72,4 +72,4 @@ usage
 1. Open the Google Authenticator app.
 2. Copy the 6 digit code.
 3. Text the code to your Twilio phone number.
-4. Your door should unlock.
+4. Your door will unlock.
